@@ -22,14 +22,8 @@ export const addReminder = async (req, res) => {
             {
                 $set: {
                     reminder: {
+                        days: req.body.days,
                         time: req.body.time,
-                        su: req.body.su,
-                        m: req.body.m,
-                        t: req.body.t,
-                        w: req.body.w,
-                        th: req.body.th,
-                        f: req.body.f,
-                        s: req.body.s,
                     },
                 },
             }
@@ -163,19 +157,6 @@ export const register = async (req, res) => {
     //req.body + default properties
     const user = {
         ...req.body,
-        //Default profilImg
-        profilImg:
-            "https://assets-global.website-files.com/62d9141584e7b750edcafa6a/638dbccab55f597a69a4e794_Christian_Peters_Trainer_Fullstack.png",
-        reminder: {
-            time: "12:00 am",
-            su: false,
-            m: false,
-            t: false,
-            w: false,
-            th: false,
-            f: false,
-            s: false,
-        }, //Muss noch angepasst werden (Default)
         favoriteYoga: [],
         favoriteMeditation: [],
     };
