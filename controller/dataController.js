@@ -77,3 +77,24 @@ export const playlists = async (req, res) => {
             res.status(500).json({ error: "Internal Server Error" });
         });
 };
+
+// --------------------------------------------- DATA_PLAYLISTBYID
+export const playlistById = async (req, res) => {
+    const { accessToken } = req;
+    const headers = {
+        Authorization: `Bearer ${accessToken}`,
+    };
+    const playlistId = req.params.id;
+
+    fetch(`https://api.spotify.com/v1/playlists/${playlistId}`, {
+        headers: headers,
+    })
+        .then((result) => result.json())
+        .then((data) => {
+            res.json(data); // Return the playlists as JSON response
+        })
+        .catch((error) => {
+            console.error("Error fetching playlist:", error);
+            res.status(500).json({ error: "Internal Server Error" });
+        });
+};
