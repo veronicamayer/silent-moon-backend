@@ -1,7 +1,5 @@
 // --------------------------------------------- IMPORTS
 import { getDb } from "../util/dbConfig.js";
-import { ObjectId } from "mongodb";
-import fetch from "node-fetch";
 
 // --------------------------------------------- DB_COLLECTION
 const VIDEO_COL = process.env.VIDEO_COL;

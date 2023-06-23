@@ -5,7 +5,6 @@ import { createJWT } from "../util/token.js";
 
 // --------------------------------------------- DB_COLLECTION
 const USER_COL = process.env.USER_COL;
-const isLoggedInObj = "";
 const guestObj = { id: 0, email: "", firstName: "guest", isLoggedIn: false };
 
 // --------------------------------------------- USER_VERIY
