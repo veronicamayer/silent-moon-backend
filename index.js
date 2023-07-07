@@ -15,7 +15,7 @@ const API_VERSION = process.env.API_VERSION;
 const app = express();
 
 //Middleware
-app.use(cors({ origin: true, credentials: true }));
+app.use(cors({ origin: process.env.VITE_FRONTEND, credentials: true }));
 app.use(morgan("dev"));
 app.use(express.json());
 
