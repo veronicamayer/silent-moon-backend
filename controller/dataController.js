@@ -55,8 +55,6 @@ export const playlists = async (req, res) => {
         .then((documents) => {
             const playlistIds = documents.map((doc) => doc.playlistId);
 
-            console.log(playlistIds);
-
             // Use the fetched playlist IDs to fetch playlists from Spotify API
             const promises = playlistIds.map((playlistId) =>
                 fetch(`https://api.spotify.com/v1/playlists/${playlistId}`, {
