@@ -3,7 +3,7 @@ import SpotifyWebApi from "spotify-web-api-node";
 export const spotifyLogin = async (req, res) => {
     const code = req.body.code;
     const spotifyApi = new SpotifyWebApi({
-        redirectUri: `${process.env.VITE_FRONTEND}spotify/login`,
+        redirectUri: `${process.env.VITE_FRONTEND}/spotify/login`,
         clientId: "ab15df07233441198e07735bdb853e7b",
         clientSecret: "7322bd6f3a6548ceaf4d2c468aa69ce1",
     });
